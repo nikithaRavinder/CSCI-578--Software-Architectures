@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application>
+    <packageName>com.example.android.snake</packageName>
+    <components>
+        <Component>
+            <type>activity</type>
+            <name>com.example.android.snake.Snake</name>
+            <RequiredPermissions/>
+            <IntentFilter>
+                <filter>
+                    <actions>android.intent.action.MAIN</actions>
+                    <categories>android.intent.category.LAUNCHER</categories>
+                    <pathData></pathData>
+                </filter>
+            </IntentFilter>
+            <PropagatedPermissions/>
+        </Component>
+        <Component>
+            <type>service</type>
+            <name>com.example.android.snake.MyService</name>
+            <RequiredPermissions/>
+            <IntentFilter/>
+            <PropagatedPermissions/>
+            <sensitiveFlows>
+                <Flow>
+                    <sink>&lt;java.io.OutputStream: void write(byte[])&gt;($r12) </sink>
+                    <sinkCalledAt>com.example.android.snake.MyService: int onStartCommand(android.content.Intent,int,int)</sinkCalledAt>
+                    <source> virtualinvoke $r4.&lt;java.lang.String: byte[] getBytes()&gt;() </source>
+                    <sourceCalledAt>com.example.android.snake.MyService: int onStartCommand(android.content.Intent,int,int)</sourceCalledAt>
+                    <sinkDomain>NO_CATEGORY</sinkDomain>
+                    <sourceDomain>NO_CATEGORY</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;java.io.OutputStream: void write(byte[])&gt;($r12) </sink>
+                    <sinkCalledAt>com.example.android.snake.MyService: int onStartCommand(android.content.Intent,int,int)</sinkCalledAt>
+                    <source> virtualinvoke $r1.&lt;android.content.Intent: java.lang.String getStringExtra(java.lang.String)&gt;(&quot;name&quot;) </source>
+                    <sourceCalledAt>com.example.android.snake.MyService: int onStartCommand(android.content.Intent,int,int)</sourceCalledAt>
+                    <sinkDomain>NO_CATEGORY</sinkDomain>
+                    <sourceDomain>IPC</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.util.Log: int i(java.lang.String,java.lang.String)&gt;(&quot;Attack&quot;, $r8) </sink>
+                    <sinkCalledAt>com.example.android.snake.MyService: int onStartCommand(android.content.Intent,int,int)</sinkCalledAt>
+                    <source> virtualinvoke $r1.&lt;android.content.Intent: java.lang.String getStringExtra(java.lang.String)&gt;(&quot;number&quot;) </source>
+                    <sourceCalledAt>com.example.android.snake.MyService: int onStartCommand(android.content.Intent,int,int)</sourceCalledAt>
+                    <sinkDomain>LOG</sinkDomain>
+                    <sourceDomain>IPC</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;java.io.OutputStream: void write(byte[])&gt;($r12) </sink>
+                    <sinkCalledAt>com.example.android.snake.MyService: int onStartCommand(android.content.Intent,int,int)</sinkCalledAt>
+                    <source> virtualinvoke $r6.&lt;java.lang.String: byte[] getBytes()&gt;() </source>
+                    <sourceCalledAt>com.example.android.snake.MyService: int onStartCommand(android.content.Intent,int,int)</sourceCalledAt>
+                    <sinkDomain>NO_CATEGORY</sinkDomain>
+                    <sourceDomain>NO_CATEGORY</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;java.io.OutputStream: void write(byte[])&gt;($r12) </sink>
+                    <sinkCalledAt>com.example.android.snake.MyService: int onStartCommand(android.content.Intent,int,int)</sinkCalledAt>
+                    <source> virtualinvoke $r1.&lt;android.content.Intent: java.lang.String getStringExtra(java.lang.String)&gt;(&quot;number&quot;) </source>
+                    <sourceCalledAt>com.example.android.snake.MyService: int onStartCommand(android.content.Intent,int,int)</sourceCalledAt>
+                    <sinkDomain>NO_CATEGORY</sinkDomain>
+                    <sourceDomain>IPC</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.util.Log: int i(java.lang.String,java.lang.String)&gt;(&quot;Attack&quot;, $r8) </sink>
+                    <sinkCalledAt>com.example.android.snake.MyService: int onStartCommand(android.content.Intent,int,int)</sinkCalledAt>
+                    <source> virtualinvoke $r1.&lt;android.content.Intent: java.lang.String getStringExtra(java.lang.String)&gt;(&quot;name&quot;) </source>
+                    <sourceCalledAt>com.example.android.snake.MyService: int onStartCommand(android.content.Intent,int,int)</sourceCalledAt>
+                    <sinkDomain>LOG</sinkDomain>
+                    <sourceDomain>IPC</sourceDomain>
+                </Flow>
+            </sensitiveFlows>
+        </Component>
+    </components>
+    <newIntents>
+        <Intent>
+            <calledAt>com.example.android.snake.Snake: void startService(android.view.View)</calledAt>
+            <sender>com.example.android.snake.Snake</sender>
+            <component>com.example.android.snake.MyService</component>
+            <action></action>
+            <dataType></dataType>
+            <scheme></scheme>
+            <extra>false</extra>
+            <sensitiveData>false</sensitiveData>
+            <consumerMethod>startService</consumerMethod>
+            <id>mhr480e2s4j4dig407a6od3vpf</id>
+            <random/>
+        </Intent>
+        <Intent>
+            <calledAt>com.example.android.snake.Snake: void startService(android.view.View)</calledAt>
+            <sender>com.example.android.snake.Snake</sender>
+            <component>com.example.android.snake.MyService</component>
+            <action></action>
+            <dataType></dataType>
+            <scheme></scheme>
+            <extra>false</extra>
+            <sensitiveData>false</sensitiveData>
+            <consumerMethod>startService</consumerMethod>
+            <id>t305tc1s65k6ma32j32ohh08ve</id>
+            <random/>
+        </Intent>
+        <Intent>
+            <calledAt>com.example.android.snake.Snake: void startService(android.view.View)</calledAt>
+            <sender>com.example.android.snake.Snake</sender>
+            <component>com.example.android.snake.MyService</component>
+            <action></action>
+            <dataType></dataType>
+            <scheme></scheme>
+            <extra>false</extra>
+            <sensitiveData>false</sensitiveData>
+            <consumerMethod>startService</consumerMethod>
+            <id>hbl7r1q43oguog6qul1lv28ge5</id>
+            <random/>
+        </Intent>
+        <Intent>
+            <calledAt>com.example.android.snake.Snake: void startService(android.view.View)</calledAt>
+            <sender>com.example.android.snake.Snake</sender>
+            <component>com.example.android.snake.MyService</component>
+            <action></action>
+            <dataType></dataType>
+            <scheme></scheme>
+            <extra>false</extra>
+            <sensitiveData>false</sensitiveData>
+            <consumerMethod>startService</consumerMethod>
+            <id>3ninlt7cfh6nm35s4v82vfd5r2</id>
+            <random/>
+        </Intent>
+    </newIntents>
+    <ContentProviders/>
+    <usesPermissions>
+        <permission>INTERNET</permission>
+    </usesPermissions>
+    <actuallyUsesPermissions>
+        <permission>INTERNET</permission>
+    </actuallyUsesPermissions>
+    <requiredPermissions/>
+    <apkFile>../../../app_repo/bundle/Snake-debug.apk</apkFile>
+    <name>Snake-debug</name>
+</application>

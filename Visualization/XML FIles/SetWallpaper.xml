@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application>
+    <packageName>nikitha.setwallpaper</packageName>
+    <components>
+        <Component>
+            <type>activity</type>
+            <name>nikitha.setwallpaper.MainActivity</name>
+            <RequiredPermissions/>
+            <IntentFilter>
+                <filter>
+                    <actions>android.intent.action.MAIN</actions>
+                    <categories>android.intent.category.LAUNCHER</categories>
+                    <pathData></pathData>
+                </filter>
+            </IntentFilter>
+            <PropagatedPermissions/>
+            <sensitiveFlows>
+                <Flow>
+                    <sink>&lt;nikitha.setwallpaper.MainActivity: android.content.ComponentName startService(android.content.Intent)&gt;($r3) on line 70 </sink>
+                    <sinkCalledAt>nikitha.setwallpaper.MainActivity: void onCreate(android.os.Bundle)</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;nikitha.setwallpaper.MainActivity: android.content.Intent getIntent()&gt;() </source>
+                    <sourceCalledAt>nikitha.setwallpaper.MainActivity: void onCreate(android.os.Bundle)</sourceCalledAt>
+                    <sinkDomain>UNDEFINED</sinkDomain>
+                    <sourceDomain>IPC</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;nikitha.setwallpaper.MainActivity: android.content.ComponentName startService(android.content.Intent)&gt;($r3) on line 70 </sink>
+                    <sinkCalledAt>nikitha.setwallpaper.MainActivity: void onCreate(android.os.Bundle)</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;nikitha.setwallpaper.MainActivity: android.content.Intent getIntent()&gt;() </source>
+                    <sourceCalledAt>nikitha.setwallpaper.MainActivity: void onCreate(android.os.Bundle)</sourceCalledAt>
+                    <sinkDomain>UNDEFINED</sinkDomain>
+                    <sourceDomain>IPC</sourceDomain>
+                </Flow>
+            </sensitiveFlows>
+        </Component>
+        <Component>
+            <type>service</type>
+            <name>nikitha.setwallpaper.ReceiveData</name>
+            <RequiredPermissions/>
+            <IntentFilter/>
+            <PropagatedPermissions/>
+        </Component>
+    </components>
+    <newIntents>
+        <Intent>
+            <calledAt>nikitha.setwallpaper.MainActivity: void onCreate(android.os.Bundle)</calledAt>
+            <sender>nikitha.setwallpaper.MainActivity</sender>
+            <component></component>
+            <action></action>
+            <dataType></dataType>
+            <scheme></scheme>
+            <extra>false</extra>
+            <sensitiveData>false</sensitiveData>
+            <consumerMethod>startService</consumerMethod>
+            <id>342pllvir2fr9c5s4fv3j603qc</id>
+            <random/>
+        </Intent>
+        <Intent>
+            <calledAt>nikitha.setwallpaper.MainActivity: void onCreate(android.os.Bundle)</calledAt>
+            <sender>nikitha.setwallpaper.MainActivity</sender>
+            <component>nikitha.setwallpaper.&quot;nikitha.audiorecorder.MyService&quot;</component>
+            <action>&quot;android.intent.action.GET_CONTENT&quot;</action>
+            <dataType>&quot;audio/mp3&quot;</dataType>
+            <scheme></scheme>
+            <extra>false</extra>
+            <sensitiveData>false</sensitiveData>
+            <consumerMethod>startService</consumerMethod>
+            <id>89u0vla230lcrtb1q82h3jsd0q</id>
+            <random/>
+        </Intent>
+        <Intent>
+            <calledAt>nikitha.setwallpaper.MainActivity: void onCreate(android.os.Bundle)</calledAt>
+            <sender>nikitha.setwallpaper.MainActivity</sender>
+            <component></component>
+            <action></action>
+            <dataType></dataType>
+            <scheme></scheme>
+            <extra>false</extra>
+            <sensitiveData>false</sensitiveData>
+            <consumerMethod>startService</consumerMethod>
+            <id>1sg3vlju21ggc24837itgdtv6g</id>
+            <random/>
+        </Intent>
+        <Intent>
+            <calledAt>nikitha.setwallpaper.MainActivity: void onCreate(android.os.Bundle)</calledAt>
+            <sender>nikitha.setwallpaper.MainActivity</sender>
+            <component>nikitha.setwallpaper.&quot;nikitha.audiorecorder.MyService&quot;</component>
+            <action>&quot;android.intent.action.GET_CONTENT&quot;</action>
+            <dataType>&quot;audio/mp3&quot;</dataType>
+            <scheme></scheme>
+            <extra>false</extra>
+            <sensitiveData>false</sensitiveData>
+            <consumerMethod>startService</consumerMethod>
+            <id>lg41ih5a0vgl8pcun5khc83jq8</id>
+            <random/>
+        </Intent>
+        <Intent>
+            <calledAt>nikitha.setwallpaper.MainActivity: void onCreate(android.os.Bundle)</calledAt>
+            <sender>nikitha.setwallpaper.MainActivity</sender>
+            <component></component>
+            <action></action>
+            <dataType></dataType>
+            <scheme></scheme>
+            <extra>false</extra>
+            <sensitiveData>false</sensitiveData>
+            <consumerMethod>startService</consumerMethod>
+            <id>cg7m6u74sts4pjcitq51v5gr9g</id>
+            <random/>
+        </Intent>
+        <Intent>
+            <calledAt>nikitha.setwallpaper.MainActivity: void onCreate(android.os.Bundle)</calledAt>
+            <sender>nikitha.setwallpaper.MainActivity</sender>
+            <component></component>
+            <action></action>
+            <dataType></dataType>
+            <scheme></scheme>
+            <extra>false</extra>
+            <sensitiveData>false</sensitiveData>
+            <consumerMethod>startService</consumerMethod>
+            <id>o46l7o1898mvubrjqum58cu33a</id>
+            <random/>
+        </Intent>
+        <Intent>
+            <calledAt>nikitha.setwallpaper.MainActivity: void onCreate(android.os.Bundle)</calledAt>
+            <sender>nikitha.setwallpaper.MainActivity</sender>
+            <component>nikitha.setwallpaper.&quot;nikitha.audiorecorder.MyService&quot;</component>
+            <action>&quot;android.intent.action.GET_CONTENT&quot;</action>
+            <dataType>&quot;audio/mp3&quot;</dataType>
+            <scheme></scheme>
+            <extra>false</extra>
+            <sensitiveData>false</sensitiveData>
+            <consumerMethod>startService</consumerMethod>
+            <id>hvvbgop74hrqdoduh69kcud9q4</id>
+            <random/>
+        </Intent>
+        <Intent>
+            <calledAt>nikitha.setwallpaper.MainActivity: void onCreate(android.os.Bundle)</calledAt>
+            <sender>nikitha.setwallpaper.MainActivity</sender>
+            <component>nikitha.setwallpaper.&quot;nikitha.audiorecorder.MyService&quot;</component>
+            <action>&quot;android.intent.action.GET_CONTENT&quot;</action>
+            <dataType>&quot;audio/mp3&quot;</dataType>
+            <scheme></scheme>
+            <extra>false</extra>
+            <sensitiveData>false</sensitiveData>
+            <consumerMethod>startService</consumerMethod>
+            <id>46onms7vqnn8lne6bjh3rmfrmv</id>
+            <random/>
+        </Intent>
+    </newIntents>
+    <ContentProviders/>
+    <usesPermissions>
+        <permission>SET_WALLPAPER</permission>
+    </usesPermissions>
+    <actuallyUsesPermissions>
+        <permission>SET_WALLPAPER</permission>
+    </actuallyUsesPermissions>
+    <requiredPermissions/>
+    <apkFile>../../../app_repo/bundle/SetWallpaper.apk</apkFile>
+    <name>SetWallpaper</name>
+</application>

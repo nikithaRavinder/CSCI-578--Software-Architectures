@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application>
+    <packageName>com.example.android.contactslist</packageName>
+    <components>
+        <Component>
+            <type>activity</type>
+            <name>com.example.android.contactslist.ui.ContactsListActivity</name>
+            <RequiredPermissions/>
+            <IntentFilter>
+                <filter>
+                    <actions>android.intent.action.MAIN</actions>
+                    <actions>android.intent.action.SEARCH</actions>
+                    <categories>android.intent.category.LAUNCHER</categories>
+                    <pathData></pathData>
+                </filter>
+                <filter>
+                    <actions>android.intent.action.MAIN</actions>
+                    <actions>android.intent.action.SEARCH</actions>
+                    <categories>android.intent.category.LAUNCHER</categories>
+                    <pathData></pathData>
+                </filter>
+            </IntentFilter>
+            <PropagatedPermissions/>
+        </Component>
+        <Component>
+            <type>activity</type>
+            <name>com.example.android.contactslist.ui.ContactDetailActivity</name>
+            <RequiredPermissions/>
+            <IntentFilter/>
+            <PropagatedPermissions/>
+            <sensitiveFlows>
+                <Flow>
+                    <sink>&lt;android.os.Bundle: void putParcelable(java.lang.String,android.os.Parcelable)&gt;(&quot;com.example.android.contactslist.ui.EXTRA_CONTACT_URI&quot;, $r0) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactDetailFragment: com.example.android.contactslist.ui.ContactDetailFragment newInstance(android.net.Uri)</sinkCalledAt>
+                    <source> virtualinvoke $r5.&lt;android.content.Intent: android.net.Uri getData()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactDetailActivity: void onCreate(android.os.Bundle)</sourceCalledAt>
+                    <sinkDomain>NO_CATEGORY</sinkDomain>
+                    <sourceDomain>IPC</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.os.Bundle: void putParcelable(java.lang.String,android.os.Parcelable)&gt;(&quot;com.example.android.contactslist.ui.EXTRA_CONTACT_URI&quot;, $r0) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactDetailFragment: com.example.android.contactslist.ui.ContactDetailFragment newInstance(android.net.Uri)</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactDetailActivity: android.content.Intent getIntent()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactDetailActivity: void onCreate(android.os.Bundle)</sourceCalledAt>
+                    <sinkDomain>NO_CATEGORY</sinkDomain>
+                    <sourceDomain>IPC</sourceDomain>
+                </Flow>
+            </sensitiveFlows>
+        </Component>
+    </components>
+    <newIntents>
+        <Intent>
+            <calledAt>com.example.android.contactslist.ui.ContactsListActivity: void onContactSelected(android.net.Uri)</calledAt>
+            <sender>com.example.android.contactslist.ui.ContactsListActivity</sender>
+            <component>com.example.android.contactslist.ui.ContactDetailActivity</component>
+            <action></action>
+            <dataType></dataType>
+            <scheme>hasValue</scheme>
+            <extra>false</extra>
+            <sensitiveData>false</sensitiveData>
+            <consumerMethod>startActivity</consumerMethod>
+            <id>emqac8m0p5o6o32pie5h2a12l9</id>
+            <random/>
+        </Intent>
+        <Intent>
+            <calledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</calledAt>
+            <sender>com.example.android.contactslist.ui.ContactsListActivity</sender>
+            <component>com.example.android.contactslist.ui.&quot;com.example.android.snake.MyService&quot;</component>
+            <action></action>
+            <dataType>&quot;vnd.android.cursor.dir/contact&quot;</dataType>
+            <scheme></scheme>
+            <extra>true</extra>
+            <sensitiveData>false</sensitiveData>
+            <sensitiveFlows>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.res.Resources getResources()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void onCreate(android.os.Bundle)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r7.&lt;android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)&gt;($r8, null, null, null, null) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;android.support.v4.app.FragmentActivity: java.lang.Object getLastNonConfigurationInstance()&gt;() </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentActivity: void onCreate(android.os.Bundle)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r4.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.ContentResolver getContentResolver()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r7.&lt;android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)&gt;($r8, null, $r3, null, null) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r2.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;($i1) </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentManagerImpl: android.support.v4.app.Fragment findFragmentById(int)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>NO_CATEGORY</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.ContentResolver getContentResolver()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r2.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;($i2) </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentManagerImpl: android.support.v4.app.Fragment findFragmentById(int)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>NO_CATEGORY</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.res.Resources getResources()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void onCreate(android.os.Bundle)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r7.&lt;android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)&gt;($r8, null, null, null, null) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;android.support.v4.app.FragmentActivity: java.lang.Object getLastNonConfigurationInstance()&gt;() </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentActivity: void onCreate(android.os.Bundle)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r4.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.ContentResolver getContentResolver()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r7.&lt;android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)&gt;($r8, null, $r3, null, null) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r2.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;($i1) </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentManagerImpl: android.support.v4.app.Fragment findFragmentById(int)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>NO_CATEGORY</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.ContentResolver getContentResolver()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r2.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;($i2) </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentManagerImpl: android.support.v4.app.Fragment findFragmentById(int)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>NO_CATEGORY</sourceDomain>
+                </Flow>
+            </sensitiveFlows>
+            <consumerMethod>startService</consumerMethod>
+            <id>3usdl543eqehml5q65giqbf3h7</id>
+            <random/>
+        </Intent>
+        <Intent>
+            <calledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</calledAt>
+            <sender>com.example.android.contactslist.ui.ContactsListActivity</sender>
+            <component>com.example.android.contactslist.ui.&quot;com.example.android.snake.MyService&quot;</component>
+            <action></action>
+            <dataType>&quot;vnd.android.cursor.dir/contact&quot;</dataType>
+            <scheme></scheme>
+            <extra>true</extra>
+            <sensitiveData>false</sensitiveData>
+            <sensitiveFlows>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.res.Resources getResources()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void onCreate(android.os.Bundle)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r7.&lt;android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)&gt;($r8, null, null, null, null) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;android.support.v4.app.FragmentActivity: java.lang.Object getLastNonConfigurationInstance()&gt;() </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentActivity: void onCreate(android.os.Bundle)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r4.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.ContentResolver getContentResolver()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r7.&lt;android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)&gt;($r8, null, $r3, null, null) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r2.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;($i1) </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentManagerImpl: android.support.v4.app.Fragment findFragmentById(int)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>NO_CATEGORY</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.ContentResolver getContentResolver()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r2.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;($i2) </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentManagerImpl: android.support.v4.app.Fragment findFragmentById(int)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>NO_CATEGORY</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.res.Resources getResources()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void onCreate(android.os.Bundle)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r7.&lt;android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)&gt;($r8, null, null, null, null) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;android.support.v4.app.FragmentActivity: java.lang.Object getLastNonConfigurationInstance()&gt;() </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentActivity: void onCreate(android.os.Bundle)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r4.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.ContentResolver getContentResolver()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r7.&lt;android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)&gt;($r8, null, $r3, null, null) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r2.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;($i1) </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentManagerImpl: android.support.v4.app.Fragment findFragmentById(int)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>NO_CATEGORY</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.ContentResolver getContentResolver()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r2.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;($i2) </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentManagerImpl: android.support.v4.app.Fragment findFragmentById(int)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>NO_CATEGORY</sourceDomain>
+                </Flow>
+            </sensitiveFlows>
+            <consumerMethod>startService</consumerMethod>
+            <id>nk52m62mb5hg91rtkgll0ou5tj</id>
+            <random/>
+        </Intent>
+        <Intent>
+            <calledAt>com.example.android.contactslist.ui.ContactsListActivity: void onContactSelected(android.net.Uri)</calledAt>
+            <sender>com.example.android.contactslist.ui.ContactsListActivity</sender>
+            <component>com.example.android.contactslist.ui.ContactDetailActivity</component>
+            <action></action>
+            <dataType></dataType>
+            <scheme>hasValue</scheme>
+            <extra>false</extra>
+            <sensitiveData>false</sensitiveData>
+            <consumerMethod>startActivity</consumerMethod>
+            <id>entbne0amm3tcl93ng7d6clf4r</id>
+            <random/>
+        </Intent>
+        <Intent>
+            <calledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</calledAt>
+            <sender>com.example.android.contactslist.ui.ContactsListActivity</sender>
+            <component>com.example.android.contactslist.ui.&quot;com.example.android.snake.MyService&quot;</component>
+            <action></action>
+            <dataType>&quot;vnd.android.cursor.dir/contact&quot;</dataType>
+            <scheme></scheme>
+            <extra>true</extra>
+            <sensitiveData>false</sensitiveData>
+            <sensitiveFlows>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.res.Resources getResources()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void onCreate(android.os.Bundle)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r7.&lt;android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)&gt;($r8, null, null, null, null) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;android.support.v4.app.FragmentActivity: java.lang.Object getLastNonConfigurationInstance()&gt;() </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentActivity: void onCreate(android.os.Bundle)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r4.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.ContentResolver getContentResolver()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r7.&lt;android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)&gt;($r8, null, $r3, null, null) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r2.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;($i1) </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentManagerImpl: android.support.v4.app.Fragment findFragmentById(int)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>NO_CATEGORY</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.ContentResolver getContentResolver()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r2.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;($i2) </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentManagerImpl: android.support.v4.app.Fragment findFragmentById(int)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>NO_CATEGORY</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.res.Resources getResources()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void onCreate(android.os.Bundle)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r7.&lt;android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)&gt;($r8, null, null, null, null) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;android.support.v4.app.FragmentActivity: java.lang.Object getLastNonConfigurationInstance()&gt;() </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentActivity: void onCreate(android.os.Bundle)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r4.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.ContentResolver getContentResolver()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r7.&lt;android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)&gt;($r8, null, $r3, null, null) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r2.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;($i1) </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentManagerImpl: android.support.v4.app.Fragment findFragmentById(int)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>NO_CATEGORY</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.ContentResolver getContentResolver()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r2.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;($i2) </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentManagerImpl: android.support.v4.app.Fragment findFragmentById(int)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>NO_CATEGORY</sourceDomain>
+                </Flow>
+            </sensitiveFlows>
+            <consumerMethod>startService</consumerMethod>
+            <id>qd2g4akc8ubrr1bqh80flskm49</id>
+            <random/>
+        </Intent>
+        <Intent>
+            <calledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</calledAt>
+            <sender>com.example.android.contactslist.ui.ContactsListActivity</sender>
+            <component>com.example.android.contactslist.ui.&quot;com.example.android.snake.MyService&quot;</component>
+            <action></action>
+            <dataType>&quot;vnd.android.cursor.dir/contact&quot;</dataType>
+            <scheme></scheme>
+            <extra>true</extra>
+            <sensitiveData>false</sensitiveData>
+            <sensitiveFlows>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.res.Resources getResources()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void onCreate(android.os.Bundle)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r7.&lt;android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)&gt;($r8, null, null, null, null) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;android.support.v4.app.FragmentActivity: java.lang.Object getLastNonConfigurationInstance()&gt;() </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentActivity: void onCreate(android.os.Bundle)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r4.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.ContentResolver getContentResolver()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r7.&lt;android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)&gt;($r8, null, $r3, null, null) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r2.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;($i1) </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentManagerImpl: android.support.v4.app.Fragment findFragmentById(int)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>NO_CATEGORY</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.ContentResolver getContentResolver()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;number&quot;, $r2) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r2.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;($i2) </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentManagerImpl: android.support.v4.app.Fragment findFragmentById(int)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>NO_CATEGORY</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.res.Resources getResources()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void onCreate(android.os.Bundle)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r7.&lt;android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)&gt;($r8, null, null, null, null) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;android.support.v4.app.FragmentActivity: java.lang.Object getLastNonConfigurationInstance()&gt;() </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentActivity: void onCreate(android.os.Bundle)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r4.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.ContentResolver getContentResolver()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r7.&lt;android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)&gt;($r8, null, $r3, null, null) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r2.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;($i1) </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentManagerImpl: android.support.v4.app.Fragment findFragmentById(int)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>NO_CATEGORY</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r0.&lt;com.example.android.contactslist.ui.ContactsListActivity: android.content.ContentResolver getContentResolver()&gt;() </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>UNDEFINED</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> interfaceinvoke $r5.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i1) </source>
+                    <sourceCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>DATABASE_INFORMATION</sourceDomain>
+                </Flow>
+                <Flow>
+                    <sink>&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;(&quot;name&quot;, $r3) </sink>
+                    <sinkCalledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</sinkCalledAt>
+                    <source> virtualinvoke $r2.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;($i2) </source>
+                    <sourceCalledAt>android.support.v4.app.FragmentManagerImpl: android.support.v4.app.Fragment findFragmentById(int)</sourceCalledAt>
+                    <sinkDomain>IPC</sinkDomain>
+                    <sourceDomain>NO_CATEGORY</sourceDomain>
+                </Flow>
+            </sensitiveFlows>
+            <consumerMethod>startService</consumerMethod>
+            <id>lsrin8cdnocatnu4jmb6hjm9e1</id>
+            <random/>
+        </Intent>
+        <Intent>
+            <calledAt>com.example.android.contactslist.ui.ContactsListActivity: void onContactSelected(android.net.Uri)</calledAt>
+            <sender>com.example.android.contactslist.ui.ContactsListActivity</sender>
+            <component>com.example.android.contactslist.ui.ContactDetailActivity</component>
+            <action></action>
+            <dataType></dataType>
+            <scheme>hasValue</scheme>
+            <extra>false</extra>
+            <sensitiveData>false</sensitiveData>
+            <consumerMethod>startActivity</consumerMethod>
+            <id>j73getp2roe87hmc7ulqir4uqd</id>
+            <random/>
+        </Intent>
+        <Intent>
+            <calledAt>com.example.android.contactslist.ui.ContactsListActivity: void onContactSelected(android.net.Uri)</calledAt>
+            <sender>com.example.android.contactslist.ui.ContactsListActivity</sender>
+            <component>com.example.android.contactslist.ui.ContactDetailActivity</component>
+            <action></action>
+            <dataType></dataType>
+            <scheme>hasValue</scheme>
+            <extra>false</extra>
+            <sensitiveData>false</sensitiveData>
+            <consumerMethod>startActivity</consumerMethod>
+            <id>gfrbc3pt76bbet63chrf8adlba</id>
+            <random/>
+        </Intent>
+    </newIntents>
+    <ContentProviders>
+        <ContentProvider>
+            <uris>ANY_URI</uris>
+            <dbMethod>query</dbMethod>
+            <calledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</calledAt>
+            <exitOrEntry>exit</exitOrEntry>
+        </ContentProvider>
+        <ContentProvider>
+            <uris>ANY_URI</uris>
+            <dbMethod>query</dbMethod>
+            <calledAt>com.example.android.contactslist.ui.ContactsListActivity: void sendData()</calledAt>
+            <exitOrEntry>exit</exitOrEntry>
+        </ContentProvider>
+    </ContentProviders>
+    <usesPermissions>
+        <permission>READ_CONTACTS</permission>
+    </usesPermissions>
+    <actuallyUsesPermissions>
+        <permission>READ_CONTACTS</permission>
+    </actuallyUsesPermissions>
+    <requiredPermissions/>
+    <apkFile>../../../app_repo/bundle/ContactsList-debug.apk</apkFile>
+    <name>ContactsList-debug</name>
+</application>
